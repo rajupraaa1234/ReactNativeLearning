@@ -35,11 +35,6 @@ function App(): JSX.Element {
     console.log("onClick Btn click ---------------->")
   }
 
-  // onClick : ()=> {},
-  //   login: () => {},
-  //   logout: () => {},
-  //   username : "raju kumar
-
   return (
     <AppContext.Provider
         value={{
@@ -47,8 +42,9 @@ function App(): JSX.Element {
           logout,
           onClick,
           username,
-        }}>
-        <ComponentA />
+        }}>   
+        {/* Need to add all the child here  */}
+        <ComponentA />      
     </AppContext.Provider>
   );
 }
