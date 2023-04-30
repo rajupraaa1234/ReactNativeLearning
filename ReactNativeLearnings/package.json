@@ -10,11 +10,14 @@
     "test": "jest"
   },
   "dependencies": {
+    "mobx": "^5.15.1",
+    "mobx-react": "^6.1.4",
     "react": "18.2.0",
     "react-native": "0.71.7"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@babel/plugin-proposal-decorators": "^7.21.0",
     "@babel/preset-env": "^7.20.0",
     "@babel/runtime": "^7.20.0",
     "@react-native-community/eslint-config": "^3.2.0",
