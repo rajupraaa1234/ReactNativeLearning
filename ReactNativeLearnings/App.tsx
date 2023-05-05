@@ -5,7 +5,7 @@
  * @format
  */
 
-import React , {useEffect,useCallback,useState} from 'react';
+import React , {useEffect,useCallback,useState , useRef} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   StyleSheet,
@@ -20,23 +20,32 @@ const App = () => {
 
   const[count,setCount] = useState(0);
   const[NEWcount,setNewCount] = useState(0);
+  const ref = useRef();
   const onClick = () => {
     setCount(count + 1);
   }
 
-  const onNewClick = useCallback( () =>{
+  const onNewClick = () =>{
     setNewCount(NEWcount + 1);
-  },[NEWcount]);
+  };
 
   return (
       <View style={{flex:1,flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
             {console.log(`render log ------------>`)}
-            <HomePage newCount={NEWcount} onClick={onNewClick}/>
+            <HomePage newCount={NEWcount} onClick={onNewClick} ref={ref}/>
             
+            {/* calling parent method from child this can achivable easly by passing the method in child component  */}
             <Text style={{marginTop:10}}>count : {count}</Text>
             <TouchableOpacity onPress={onClick} style={{justifyContent:'center' ,marginTop:10 , alignItems:'center' , height:40,width:80,backgroundColor:'blue',borderRadius:10}}>
               <Text style={{color:'white'}}>
                   Click
+              </Text>
+            </TouchableOpacity>
+
+                {/* calling the child method from parent for that we need to use useImperativeHandle  */}
+            <TouchableOpacity onPress={()=>{ref.current.CallchildMethod()}} style={{justifyContent:'center' ,marginTop:20 , alignItems:'center' , height:40,width:200,backgroundColor:'blue',borderRadius:10}}>
+              <Text style={{color:'white'}}>
+                   child method call from paresnt
               </Text>
             </TouchableOpacity>
       </View>
