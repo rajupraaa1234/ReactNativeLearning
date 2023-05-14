@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "696855431246",
+    "project_id": "deeplinking-ae016",
+    "storage_bucket": "deeplinking-ae016.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696855431246:android:f0a34d63ca553b55bd1b1f",
+        "android_client_info": {
+          "package_name": "com.reactnativelearnings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696855431246-cnc19s4353dkm3k7kdp547p1ubhj390q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reactnativelearnings",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "696855431246-shvav1nvvd8eoqm1fojha61q5naiaufg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8KEb2LamssX8h5KLc15QKKXOGXk96Btg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696855431246-shvav1nvvd8eoqm1fojha61q5naiaufg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
