@@ -5,7 +5,7 @@
  * @format
  */
 
-import React , {useEffect,useCallback,useState} from 'react';
+import React , {useEffect,useCallback,useState , useMemo} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   StyleSheet,
@@ -28,12 +28,20 @@ const App = () => {
     setNewCount(NEWcount + 1);
   },[NEWcount]);
 
+
+  const factorial = useMemo(() => factorialOf(NEWcount), [NEWcount]);
+
+  function factorialOf(n) {
+    console.log('factorialOf(n) called!');
+    return n <= 0 ? 1 : n * factorialOf(n - 1);
+  }
   return (
       <View style={{flex:1,flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
             {console.log(`render log ------------>`)}
             <HomePage newCount={NEWcount} onClick={onNewClick}/>
             
             <Text style={{marginTop:10}}>count : {count}</Text>
+            <Text>Fact : {factorial}</Text>
             <TouchableOpacity onPress={onClick} style={{justifyContent:'center' ,marginTop:10 , alignItems:'center' , height:40,width:80,backgroundColor:'blue',borderRadius:10}}>
               <Text style={{color:'white'}}>
                   Click
