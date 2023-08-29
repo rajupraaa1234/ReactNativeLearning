@@ -1,12 +1,32 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TextInput } from 'react-native';
 import { ComponentB } from '@components';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import AxiosScreen from '../Screens/AxiosScreen';
+import FetchScreen from '../Screens/FetchScreen';
+
+
 
 // create a component
 const MyComponent = () => {
+    const Stack = createNativeStackNavigator();
     return (
-        <ComponentB />
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen
+                   name='AxiosScreen'
+                   component={AxiosScreen}
+                   options={{title:AxiosScreen}} />
+
+                <Stack.Screen
+                   name='AxiosScreen'
+                   component={FetchScreen}
+                   options={{title:AxiosScreen}}/>
+
+            </Stack.Navigator>
+        </NavigationContainer>
     )
 };
 
