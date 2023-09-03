@@ -18,12 +18,12 @@ const MyComponent = () => {
                 <Stack.Screen
                    name='AxiosScreen'
                    component={AxiosScreen}
-                   options={{title:AxiosScreen}} />
+                   options={{title:"AxiosScreen"}} />
 
                 <Stack.Screen
-                   name='AxiosScreen'
+                   name='FetchScreen'
                    component={FetchScreen}
-                   options={{title:AxiosScreen}}/>
+                   options={{title:"FetchScreen"}}/>
 
             </Stack.Navigator>
         </NavigationContainer>
