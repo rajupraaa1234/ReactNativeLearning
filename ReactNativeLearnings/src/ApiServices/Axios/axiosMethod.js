@@ -3,6 +3,8 @@ import axiosAuth from './axiosAuth';
 
 export const AxiosGet = async (endPoint) => {
      let axios = axiosAuth(endPoint);
+     //axios.defaults.headers.common['jwt'] = jwt;
+     //axios.defaults.headers.common['Auth'] = 'EISecret';
      const response = await axios.get(endPoint);
      return response;
 }
