@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@notifee/react-native": "^7.8.0",
     "@voximplant/react-native-foreground-service": "^3.0.2",
     "react": "18.2.0",
     "react-native": "0.71.7",
