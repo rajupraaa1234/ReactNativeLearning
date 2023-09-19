@@ -10,8 +10,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@voximplant/react-native-foreground-service": "^3.0.2",
     "react": "18.2.0",
-    "react-native": "0.71.7"
+    "react-native": "0.71.7",
+    "react-native-background-actions": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
