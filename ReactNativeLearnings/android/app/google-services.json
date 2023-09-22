@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "534520827737",
+    "project_id": "reactnativelearning-af56d",
+    "storage_bucket": "reactnativelearning-af56d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534520827737:android:dd307f291212fef8958648",
+        "android_client_info": {
+          "package_name": "com.reactnativelearnings"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJLSBaGhsOQV_VmnJAOEsNlmxC9LHA73k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
