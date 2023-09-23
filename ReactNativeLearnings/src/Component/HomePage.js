@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {View , Text , Button} from 'react-native';
+import CustomButton from './CustomButton';
 
 class HomePage extends Component{
     constructor(){
@@ -27,6 +28,7 @@ class HomePage extends Component{
             console.log(`onClick clicked -------------> `);
         }
        
+        console.log(`HomePage render --------------> `);
         return(
             
             <View style={{justifyContent:'center',alignItems:'center',alignSelf:'center',flex:1}}>
@@ -36,6 +38,7 @@ class HomePage extends Component{
                 <View style={{marginTop:10}}>
                     <Button title='Dec' onPress={()=>{onClick()}}/>
                 </View>
+                <CustomButton/>
             </View>
         )
     }
