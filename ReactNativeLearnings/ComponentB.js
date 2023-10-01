@@ -1,4 +1,4 @@
-import React , {useMemo, useState , useCallback} from "react"
+import React , {useMemo, useState , useCallback , useRef} from "react"
 import {View,Text , Button} from 'react-native';
 import ComponentC from './ComponentC';
 // Example of useMemo 
@@ -12,6 +12,8 @@ const ComponentB = (props) =>{
       if(num == 1) return 1;
       return getNewFactorial(num-1) * num;
    }
+
+   const ref = useRef();
 
    const childMethod = useCallback(()=>{
         console.log(`child method`)
@@ -32,9 +34,9 @@ const ComponentB = (props) =>{
             <View style={{marginTop:10}}>
                 <Button title="click" onPress={()=>{setCount(count + 1)}}/>
             </View>
-            <ComponentC count={count} childMethod={childMethod}/>
+            <ComponentC count={count} childMethod={childMethod} ref={ref}/>
             <View style={{marginTop:10}}>
-                <Button title={name ? "Clicked" : "Click"} onPress={()=>{setName(!name)}}/>
+                <Button title={name ? "Clicked" : "Click"} onPress={()=>{ref.current.callMethod()}}/>
             </View>
         </View>
     )
