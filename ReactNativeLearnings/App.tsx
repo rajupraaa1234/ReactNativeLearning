@@ -15,20 +15,26 @@ import {
 } from 'react-native';
 import MainComponent from './MainComponent';
 import {AppContext} from '@context';
+import {Provider} from 'react-redux';
+import Store from './Redux/Store/Store';
 
 const App = () => {
   const onLoginClick = () =>{
       console.log(`onLogin Click----->`)
   }
   return (
+    <Provider store={Store}>  
        <AppContext.Provider
           value={{
             AppName :  'InterView Pre',
             onLogin : onLoginClick
           }}
         >
-            <MainComponent/>
+            
+               <MainComponent/>
+           
        </AppContext.Provider>
+       </Provider>
      
    )
 }
