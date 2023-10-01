@@ -1,5 +1,6 @@
-import React , {useMemo, useState} from "react"
+import React , {useMemo, useState , useCallback} from "react"
 import {View,Text , Button} from 'react-native';
+import ComponentC from './ComponentC';
 // Example of useMemo 
 const ComponentB = (props) =>{
    const [count,setCount] = useState(0);
@@ -11,6 +12,11 @@ const ComponentB = (props) =>{
       if(num == 1) return 1;
       return getNewFactorial(num-1) * num;
    }
+
+   const childMethod = useCallback(()=>{
+        console.log(`child method`)
+   },[count]);
+   
    
    //const factorial = getNewFactorial(count);    // If you are using directly then whenever any any state will change then
                                                  //  getNewFactorial method will call to prevent this we can use useMemo hooks . 
@@ -26,6 +32,7 @@ const ComponentB = (props) =>{
             <View style={{marginTop:10}}>
                 <Button title="click" onPress={()=>{setCount(count + 1)}}/>
             </View>
+            <ComponentC count={count} childMethod={childMethod}/>
             <View style={{marginTop:10}}>
                 <Button title={name ? "Clicked" : "Click"} onPress={()=>{setName(!name)}}/>
             </View>
