@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useCallback, useRef } from "react"
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button , DeviceEventEmitter } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import ComponentC from './ComponentC';
 import { setUseName, setAppName } from '@actions';
@@ -41,7 +41,10 @@ const ComponentB = (props) => {
     const customModule = () => {
         UserModule.MyMessage('RAjuk dasd');
     }
-
+    
+    const callEventEmiter = () =>{
+        DeviceEventEmitter.emit("FirstName", "Raju kumar");
+    }
     return (
         <View style={{ justifyContent: 'center', alignSelf: 'center', flex: 1 }}>
             <Text>Hey , New Count {count}</Text>
@@ -64,6 +67,10 @@ const ComponentB = (props) => {
 
             <View style={{ marginTop: 10 }}>
                 <Button title={"Costum Module"} onPress={customModule} />
+            </View>
+
+            <View style={{ marginTop: 10 }}>
+                <Button title={"Call Event Emitter"} onPress={callEventEmiter} />
             </View>
 
         </View>

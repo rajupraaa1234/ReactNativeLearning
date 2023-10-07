@@ -1,5 +1,5 @@
-import React from "react"
-import {View,Text} from 'react-native';
+import React  , { useEffect } from "react"
+import {View,Text , DeviceEventEmitter} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ComponentA from "./ComponentA";
@@ -7,6 +7,17 @@ import ComponentB from "./ComponentB";
 
 const MainComponent = () =>{
     const Stack = createStackNavigator();
+
+    useEffect(()=>{
+      const subscription = DeviceEventEmitter.addListener('FirstName', (data) => {
+        console.log('Event received:', data);
+      });
+      return ()=>{
+        DeviceEventEmitter.removeSubscription(subscription)
+      }
+},[]);
+
+
     return (
         <NavigationContainer>
             <Stack.Navigator
