@@ -3,6 +3,7 @@ import { View, Text, Button } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import ComponentC from './ComponentC';
 import { setUseName, setAppName } from '@actions';
+import UserModule from './UserModule.js';
 // Example of useMemo 
 const ComponentB = (props) => {
     const [count, setCount] = useState(0);
@@ -37,6 +38,10 @@ const ComponentB = (props) => {
         dispatch(setAppName("MindSpark"))
     }
 
+    const customModule = () => {
+        UserModule.MyMessage('RAjuk dasd');
+    }
+
     return (
         <View style={{ justifyContent: 'center', alignSelf: 'center', flex: 1 }}>
             <Text>Hey , New Count {count}</Text>
@@ -55,6 +60,10 @@ const ComponentB = (props) => {
             </View>
             <View style={{ marginTop: 10 }}>
                 <Button title={"setAppName"} onPress={setAppName1} />
+            </View>
+
+            <View style={{ marginTop: 10 }}>
+                <Button title={"Costum Module"} onPress={customModule} />
             </View>
 
         </View>
