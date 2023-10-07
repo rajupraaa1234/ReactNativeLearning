@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 public class MyCustomModule extends ReactContextBaseJavaModule {
 
@@ -31,5 +32,11 @@ public class MyCustomModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void MyMessage(String str) {
         Log.d("MyMessage",str);
+    }
+
+    @ReactMethod
+    public void getEventCall(String eventName,String data){
+        getReactApplicationContext()
+                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName,data);
     }
 }

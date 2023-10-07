@@ -45,6 +45,11 @@ const ComponentB = (props) => {
     const callEventEmiter = () =>{
         DeviceEventEmitter.emit("FirstName", "Raju kumar");
     }
+
+    const callEventEmiterFromNative = ()=>{
+        UserModule.getEventCall('FirstName','Rahul kumar');
+    }
+    
     return (
         <View style={{ justifyContent: 'center', alignSelf: 'center', flex: 1 }}>
             <Text>Hey , New Count {count}</Text>
@@ -71,6 +76,11 @@ const ComponentB = (props) => {
 
             <View style={{ marginTop: 10 }}>
                 <Button title={"Call Event Emitter"} onPress={callEventEmiter} />
+            </View>
+
+
+            <View style={{ marginTop: 10 }}>
+                <Button title={"Call Event Emitter from Native"} onPress={callEventEmiterFromNative} />
             </View>
 
         </View>
