@@ -37,6 +37,9 @@ const ComponentA = (props) => {
     const moveToClass = () => {
         props.navigation.navigate('MyClassComponent');
     }
+    const moveToAnimation =()=>{
+      props.navigation.navigate('AnimationComponent');
+    }
     return (
         <View style={{ justifyContent: 'center', alignSelf: 'center', flex: 1 }}>
             <View  ref={ref} style={{backgroundColor : 'red'}} onPress={() => { console.log("asdadfsdfsdfs sdfsdff") }}>
@@ -48,6 +51,7 @@ const ComponentA = (props) => {
             <Button style={{ marginTop: 30 }} title="Open Modal" onPress={() => { setVisible(true) }} />
             <Button ref={buttonRef} style={{ marginTop: 30 }} title="DOM Manupulation" onPress={updateButtonText} />
             <Button ref={buttonRef} style={{ marginTop: 30 }} title="Class Component" onPress={moveToClass} />
+            <Button ref={buttonRef} style={{ marginTop: 30 }} title="Animation" onPress={moveToAnimation} />
         </View>
     )
 }
