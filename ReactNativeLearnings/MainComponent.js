@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ComponentA from "./ComponentA";
 import ComponentB from "./ComponentB";
+import MyClassComponent from './MyClassComponent';
 
 const MainComponent = () =>{
     const Stack = createStackNavigator();
@@ -33,6 +34,10 @@ const MainComponent = () =>{
                    <Stack.Screen
                     name="ComponentB"
                     component={ComponentB}
+                  />
+                  <Stack.Screen
+                    name="MyClassComponent"
+                    component={MyClassComponent}
                   />
             </Stack.Navigator>
         </NavigationContainer>
